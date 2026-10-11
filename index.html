@@ -1,0 +1,896 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Masuma Barati — aspiring front-end developer building thoughtful, useful web experiences."
+    />
+    <meta name="theme-color" content="#0b0b10" />
+    <title>Masuma Barati — Front-End Developer</title>
+    <!-- Tailwind CSS v4-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+      }
+    </style>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b0b10;
+        --text: #f4f4f5;
+        --muted: #a1a1aa;
+        --panel: rgba(255, 255, 255, 0.035);
+        --hover: rgba(255, 255, 255, 0.065);
+        --line: rgba(255, 255, 255, 0.1);
+        --nav: rgba(11, 11, 16, 0.8);
+        --soft: #18181f;
+      }
+      html[data-theme="light"] {
+        color-scheme: light;
+        --bg: #faf9ff;
+        --text: #181622;
+        --muted: #686575;
+        --panel: rgba(255, 255, 255, 0.78);
+        --hover: #fff;
+        --line: rgba(39, 32, 68, 0.13);
+        --nav: rgba(250, 249, 255, 0.85);
+        --soft: #f0edfa;
+      }
+      html {
+        scroll-padding-top: 90px;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        transition:
+          background 0.2s,
+          border-color 0.2s,
+          transform 0.2s;
+      }
+      .panel:hover {
+        background: var(--hover);
+        border-color: rgba(167, 139, 250, 0.42);
+      }
+      .line {
+        border-color: var(--line);
+      }
+      .nav-shell {
+        background: var(--nav);
+        border-color: var(--line);
+        backdrop-filter: blur(18px);
+      }
+      .soft-bg {
+        background: var(--soft);
+      }
+      .accent {
+        color: #a78bfa;
+      }
+      .accent-btn {
+        background: #a78bfa;
+        color: #181622;
+      }
+      .accent-btn:hover {
+        background: #c4b5fd;
+        transform: translateY(-1px);
+      }
+      .focus-ring:focus-visible {
+        outline: 2px solid #a78bfa;
+        outline-offset: 4px;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(15px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .hero-grid {
+        background-image:
+          linear-gradient(var(--line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--line) 1px, transparent 1px);
+        background-size: 48px 48px;
+        mask-image: linear-gradient(to bottom, black, transparent 88%);
+        opacity: 0.22;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen antialiased selection:bg-violet-300 selection:text-zinc-950"
+  >
+    <div
+      aria-hidden="true"
+      class="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+    >
+      <div class="hero-grid absolute inset-0"></div>
+      <div
+        class="absolute -top-28 left-[10%] h-72 w-72 rounded-full bg-violet-500/20 blur-[70px]"
+      ></div>
+      <div
+        class="absolute right-[-8rem] top-[30rem] h-80 w-80 rounded-full bg-indigo-500/15 blur-[70px]"
+      ></div>
+    </div>
+    <header class="fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:px-6">
+      <nav
+        aria-label="Main navigation"
+        class="nav-shell mx-auto flex max-w-6xl items-center justify-between rounded-2xl border px-4 py-3 sm:px-5"
+      >
+        <a href="#home" class="focus-ring flex items-center gap-3 rounded-lg">
+          <span
+            class="grid h-9 w-9 place-items-center rounded-xl bg-violet-300 font-bold text-zinc-950"
+            >M.</span
+          >
+          <span class="text-sm font-semibold tracking-tight"
+            >Masuma Barati<span class="accent">.</span></span
+          >
+        </a>
+        <div class="hidden items-center gap-7 md:flex">
+          <a
+            class="focus-ring muted rounded text-sm hover:text-current"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="focus-ring muted rounded text-sm hover:text-current"
+            href="#skills"
+            >Skills</a
+          >
+          <a
+            class="focus-ring muted rounded text-sm hover:text-current"
+            href="#work"
+            >Projects</a
+          >
+          <a
+            class="focus-ring muted rounded text-sm hover:text-current"
+            href="#journey"
+            >Journey</a
+          >
+          <a
+            class="focus-ring muted rounded text-sm hover:text-current"
+            href="#contact"
+            >Contact</a
+          >
+        </div>
+        <div class="flex items-center gap-2">
+          <button
+            id="themeToggle"
+            class="focus-ring panel grid h-10 w-10 place-items-center rounded-xl"
+            type="button"
+            aria-label="Switch to light mode"
+            title="Toggle theme"
+          >
+            <svg
+              id="themeIcon"
+              viewBox="0 0 24 24"
+              class="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path
+                d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"
+              ></path>
+            </svg>
+          </button>
+          <button
+            id="menuToggle"
+            class="focus-ring panel grid h-10 w-10 place-items-center rounded-xl md:hidden"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            aria-label="Open navigation menu"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              class="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M4 7h16M4 12h16M4 17h16"></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <div
+        id="mobileMenu"
+        class="nav-shell mx-auto mt-2 hidden max-w-6xl rounded-2xl border p-3 md:hidden"
+      >
+        <a
+          class="mobile-link block rounded-xl px-4 py-3 text-sm hover:bg-violet-400/10"
+          href="#about"
+          >About</a
+        >
+        <a
+          class="mobile-link block rounded-xl px-4 py-3 text-sm hover:bg-violet-400/10"
+          href="#skills"
+          >Skills</a
+        >
+        <a
+          class="mobile-link block rounded-xl px-4 py-3 text-sm hover:bg-violet-400/10"
+          href="#work"
+          >Projects</a
+        >
+        <a
+          class="mobile-link block rounded-xl px-4 py-3 text-sm hover:bg-violet-400/10"
+          href="#journey"
+          >Journey</a
+        >
+        <a
+          class="mobile-link block rounded-xl px-4 py-3 text-sm hover:bg-violet-400/10"
+          href="#contact"
+          >Contact</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section
+        id="home"
+        class="mx-auto flex min-h-screen max-w-6xl items-center px-5 pb-20 pt-32 sm:px-8"
+      >
+        <div class="grid w-full items-center gap-14 lg:grid-cols-[1.3fr_.7fr]">
+          <div class="reveal">
+            <div
+              class="mb-7 inline-flex items-center gap-2 rounded-full border line px-3 py-2 text-xs muted"
+            >
+              <span class="h-2 w-2 rounded-full bg-emerald-400"></span>Learning,
+              building, and growing
+            </div>
+            <p
+              class="accent mb-4 text-sm font-medium uppercase tracking-[.22em]"
+            >
+              Aspiring front-end developer
+            </p>
+            <h1
+              class="max-w-3xl text-5xl leading-[1.08] font-semibold tracking-[-.055em] sm:text-6xl lg:text-7xl"
+            >
+              I build for the web.<br /><span class="text-zinc-400"
+                >With purpose.</span
+              >
+            </h1>
+            <p class="muted mt-7 max-w-xl text-base leading-8 sm:text-lg">
+              I'm Masuma — a curious developer learning to turn ideas into
+              clear, useful, and accessible digital experiences. I care about
+              thoughtful details, honest work, and technology that helps people.
+            </p>
+            <div class="mt-9 flex flex-wrap gap-3">
+              <a
+                href="#work"
+                class="focus-ring accent-btn inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition"
+                >Explore my work <span aria-hidden="true">→</span></a
+              >
+              <a
+                href="#contact"
+                class="focus-ring panel inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold"
+                >Get in touch <span aria-hidden="true">↗</span></a
+              >
+            </div>
+            <div
+              class="muted mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs"
+            >
+              <span>⌖ Based in Herat, Afghanistan</span
+              ><span>Open to learning and collaboration</span>
+            </div>
+          </div>
+          <div
+            class="reveal mx-auto w-full max-w-sm lg:ml-auto"
+            style="transition-delay: 100ms"
+          >
+            <div
+              class="panel relative overflow-hidden rounded-[2rem] p-6 sm:p-7"
+            >
+              <div
+                class="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-violet-400/15 blur-2xl"
+              ></div>
+              <div class="relative">
+                <div class="flex items-start justify-between">
+                  <div
+                    class="grid h-16 w-16 place-items-center rounded-2xl bg-violet-300 text-2xl font-semibold text-zinc-950"
+                  >
+                    MB
+                  </div>
+                  <span
+                    class="rounded-full border line px-3 py-1.5 text-[11px] muted"
+                    >CURRENT FOCUS</span
+                  >
+                </div>
+                <h2 class="mt-7 text-2xl font-semibold tracking-tight">
+                  Build. Learn. Improve.
+                </h2>
+                <p class="muted mt-2 text-sm leading-6">
+                  A steady approach to becoming a thoughtful, reliable
+                  developer.
+                </p>
+                <div class="mt-7 space-y-4">
+                  <div>
+                    <div class="mb-2 flex justify-between text-xs">
+                      <span>HTML & CSS</span
+                      ><span class="muted">Foundations</span>
+                    </div>
+                    <div class="soft-bg h-1.5 overflow-hidden rounded-full">
+                      <div
+                        class="h-full w-[82%] rounded-full bg-violet-300"
+                      ></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="mb-2 flex justify-between text-xs">
+                      <span>JavaScript</span><span class="muted">Growing</span>
+                    </div>
+                    <div class="soft-bg h-1.5 overflow-hidden rounded-full">
+                      <div
+                        class="h-full w-[56%] rounded-full bg-violet-300"
+                      ></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="mb-2 flex justify-between text-xs">
+                      <span>React</span
+                      ><span class="muted">Currently learning</span>
+                    </div>
+                    <div class="soft-bg h-1.5 overflow-hidden rounded-full">
+                      <div
+                        class="h-full w-[35%] rounded-full bg-violet-300"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-7 border-t line pt-5">
+                  <p class="text-xs muted">A principle I try to follow</p>
+                  <p class="mt-2 text-sm font-medium">
+                    “Lead with heart, listen with care, and act with courage.”
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p class="muted mt-4 text-center text-xs">
+              A work in progress — just like every good developer.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+        <div class="reveal grid gap-10 md:grid-cols-[.7fr_1.3fr] md:gap-20">
+          <div>
+            <p
+              class="accent mb-3 text-xs font-semibold uppercase tracking-[.22em]"
+            >
+              01 / About
+            </p>
+            <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+              A little about me.
+            </h2>
+          </div>
+          <div>
+            <p class="text-xl leading-8 tracking-tight sm:text-2xl">
+              I'm an aspiring front-end developer who enjoys solving problems
+              and making the web easier to use.
+            </p>
+            <p class="muted mt-5 leading-8">
+              My learning journey includes building websites, exploring
+              JavaScript and React, and collaborating on projects with a social
+              purpose. I also volunteer in education, which has taught me
+              patience, responsibility, and how to communicate with different
+              people.
+            </p>
+            <p class="muted mt-4 leading-8">
+              I value honesty, integrity, and continuous growth. I don't expect
+              to know everything; I aim to keep learning, ask better questions,
+              and create work that is useful to someone.
+            </p>
+            <div class="mt-7 flex flex-wrap gap-2">
+              <span class="rounded-full border line px-3 py-2 text-xs muted"
+                >Curious by nature</span
+              ><span class="rounded-full border line px-3 py-2 text-xs muted"
+                >People-centered</span
+              ><span class="rounded-full border line px-3 py-2 text-xs muted"
+                >Always learning</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="soft-bg border-y line">
+        <div class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+          <div class="reveal mb-12 max-w-2xl">
+            <p
+              class="accent mb-3 text-xs font-semibold uppercase tracking-[.22em]"
+            >
+              02 / Toolkit
+            </p>
+            <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Tools I'm learning and using.
+            </h2>
+            <p class="muted mt-4 leading-7">
+              A practical toolkit that grows as I build more projects. I prefer
+              understanding the fundamentals instead of collecting tools I
+              haven't used.
+            </p>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="panel reveal rounded-2xl p-6">
+              <div
+                class="mb-5 grid h-11 w-11 place-items-center rounded-xl bg-orange-400/10 text-sm font-bold text-orange-400"
+              >
+                01
+              </div>
+              <h3 class="font-semibold">Core web</h3>
+              <p class="muted mt-2 text-sm leading-6">
+                HTML5, CSS3, responsive layouts, accessibility basics, and
+                browser developer tools.
+              </p>
+            </article>
+            <article class="panel reveal rounded-2xl p-6">
+              <div
+                class="mb-5 grid h-11 w-11 place-items-center rounded-xl bg-yellow-400/10 text-sm font-bold text-yellow-400"
+              >
+                02
+              </div>
+              <h3 class="font-semibold">JavaScript</h3>
+              <p class="muted mt-2 text-sm leading-6">
+                ES6 fundamentals, DOM events, arrays, conditions, functions, and
+                working with APIs.
+              </p>
+            </article>
+            <article class="panel reveal rounded-2xl p-6">
+              <div
+                class="mb-5 grid h-11 w-11 place-items-center rounded-xl bg-sky-400/10 text-sm font-bold text-sky-400"
+              >
+                03
+              </div>
+              <h3 class="font-semibold">Libraries & frameworks</h3>
+              <p class="muted mt-2 text-sm leading-6">
+                Bootstrap, Tailwind CSS, and React — with a focus on reusable
+                components.
+              </p>
+            </article>
+            <article class="panel reveal rounded-2xl p-6">
+              <div
+                class="mb-5 grid h-11 w-11 place-items-center rounded-xl bg-violet-400/10 text-sm font-bold accent"
+              >
+                04
+              </div>
+              <h3 class="font-semibold">Developer workflow</h3>
+              <p class="muted mt-2 text-sm leading-6">
+                Git, GitHub, VS Code, debugging, and learning to keep projects
+                organized.
+              </p>
+            </article>
+            <article class="panel reveal rounded-2xl p-6">
+              <div
+                class="mb-5 grid h-11 w-11 place-items-center rounded-xl bg-emerald-400/10 text-sm font-bold text-emerald-400"
+              >
+                05
+              </div>
+              <h3 class="font-semibold">Collaboration</h3>
+              <p class="muted mt-2 text-sm leading-6">
+                Communication, teamwork, responsibility, and a willingness to
+                receive feedback.
+              </p>
+            </article>
+            <article class="panel reveal rounded-2xl p-6">
+              <div
+                class="mb-5 grid h-11 w-11 place-items-center rounded-xl bg-pink-400/10 text-sm font-bold text-pink-400"
+              >
+                06
+              </div>
+              <h3 class="font-semibold">Still exploring</h3>
+              <p class="muted mt-2 text-sm leading-6">
+                Component libraries, cleaner code, better accessibility, and
+                stronger JavaScript skills.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+        <div
+          class="reveal mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"
+        >
+          <div>
+            <p
+              class="accent mb-3 text-xs font-semibold uppercase tracking-[.22em]"
+            >
+              03 / Selected work
+            </p>
+            <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Things I've worked on.
+            </h2>
+            <p class="muted mt-4 max-w-xl leading-7">
+              A mix of learning projects and purpose-driven work. Replace
+              placeholder links with the demos and repositories you want to
+              share.
+            </p>
+          </div>
+          <span class="w-fit rounded-full border line px-3 py-2 text-xs muted"
+            >Selected projects · 2024–2026</span
+          >
+        </div>
+        <div class="grid gap-5 md:grid-cols-2">
+          <article class="panel reveal group rounded-3xl p-5">
+            <div
+              class="soft-bg relative flex min-h-52 items-center justify-center overflow-hidden rounded-2xl border line p-6"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-violet-500/15 to-indigo-500/10"
+              ></div>
+              <div
+                class="relative w-full max-w-xs rounded-xl border border-white/10 bg-zinc-950 p-4 text-zinc-100 shadow-2xl transition group-hover:-translate-y-1"
+              >
+                <div class="mb-4 flex gap-1.5">
+                  <i class="h-2 w-2 rounded-full bg-rose-400"></i
+                  ><i class="h-2 w-2 rounded-full bg-amber-300"></i
+                  ><i class="h-2 w-2 rounded-full bg-emerald-400"></i>
+                </div>
+                <div class="mb-3 h-2 w-1/3 rounded bg-violet-300/80"></div>
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="h-14 rounded-lg bg-white/10"></div>
+                  <div class="h-14 rounded-lg bg-violet-300/20"></div>
+                  <div class="h-14 rounded-lg bg-white/10"></div>
+                </div>
+                <div class="mt-3 h-2 w-4/5 rounded bg-white/15"></div>
+                <div class="mt-2 h-2 w-3/5 rounded bg-white/10"></div>
+              </div>
+              <span class="accent absolute right-4 top-4 text-xs font-semibold"
+                >PROJECT 01</span
+              >
+            </div>
+            <div class="px-1 pb-1 pt-5">
+              <p class="muted text-[11px]">HTML · CSS · JavaScript</p>
+              <h3 class="mt-3 text-xl font-semibold">Her Voice Rising</h3>
+              <p class="muted mt-2 text-sm leading-7">
+                A social-impact project focused on the untold stories of Afghan
+                girls, with attention to privacy and thoughtful presentation.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-4">
+                <a
+                  href="https://her-voice-rising.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="focus-ring accent rounded text-sm font-medium hover:underline"
+                  >View project ↗</a
+                ><a
+                  href="#"
+                  data-placeholder-link
+                  class="focus-ring muted rounded text-sm hover:text-current"
+                  >Source code ↗</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="panel reveal group rounded-3xl p-5">
+            <div
+              class="soft-bg relative flex min-h-52 items-center justify-center overflow-hidden rounded-2xl border line p-6"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-cyan-500/10"
+              ></div>
+              <div
+                class="relative w-full max-w-xs rounded-xl border line bg-white p-4 text-zinc-800 shadow-2xl transition group-hover:-translate-y-1"
+              >
+                <div class="flex justify-between">
+                  <div class="h-3 w-24 rounded bg-zinc-200"></div>
+                  <div class="h-6 w-6 rounded-full bg-emerald-100"></div>
+                </div>
+                <div class="mt-5 grid grid-cols-2 gap-3">
+                  <div class="rounded-lg border border-zinc-100 p-3">
+                    <div class="h-2 w-10 rounded bg-zinc-200"></div>
+                    <div class="mt-3 h-5 w-14 rounded bg-emerald-200"></div>
+                  </div>
+                  <div class="rounded-lg border border-zinc-100 p-3">
+                    <div class="h-2 w-10 rounded bg-zinc-200"></div>
+                    <div class="mt-3 h-5 w-14 rounded bg-cyan-200"></div>
+                  </div>
+                </div>
+                <div class="mt-3 h-14 rounded-lg bg-zinc-100 p-3">
+                  <div class="h-2 w-3/4 rounded bg-zinc-300"></div>
+                  <div class="mt-2 h-2 w-1/2 rounded bg-zinc-200"></div>
+                </div>
+              </div>
+              <span class="accent absolute right-4 top-4 text-xs font-semibold"
+                >PROJECT 02</span
+              >
+            </div>
+            <div class="px-1 pb-1 pt-5">
+              <p class="muted text-[11px]">HTML · CSS · JavaScript</p>
+              <h3 class="mt-3 text-xl font-semibold">
+                Front-end Practice Projects
+              </h3>
+              <p class="muted mt-2 text-sm leading-7">
+                Practice projects exploring page layouts, interactive
+                components, responsive styling, and front-end fundamentals.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-4">
+                <a
+                  href="#"
+                  data-placeholder-link
+                  class="focus-ring accent rounded text-sm font-medium hover:underline"
+                  >Live demo ↗</a
+                ><a
+                  href="#"
+                  data-placeholder-link
+                  class="focus-ring muted rounded text-sm hover:text-current"
+                  >Source code ↗</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="panel reveal group rounded-3xl p-5">
+            <div
+              class="soft-bg relative flex min-h-52 items-center justify-center overflow-hidden rounded-2xl border line p-6"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-amber-400/10 to-rose-400/10"
+              ></div>
+              <div
+                class="relative w-full max-w-xs rounded-xl border line bg-[#18131f] p-4 text-white shadow-2xl transition group-hover:-translate-y-1"
+              >
+                <div
+                  class="text-xs font-semibold tracking-wide text-violet-200"
+                >
+                  LEARNING CORNERS
+                </div>
+                <div class="mt-3 text-xl font-semibold">Learn together.</div>
+                <div class="mt-2 text-[10px] leading-5 text-zinc-400">
+                  Learning · Community · Opportunity
+                </div>
+                <div class="mt-4 flex gap-2">
+                  <div class="h-9 flex-1 rounded-lg bg-violet-300/20"></div>
+                  <div class="h-9 flex-1 rounded-lg bg-amber-300/20"></div>
+                  <div class="h-9 flex-1 rounded-lg bg-cyan-300/20"></div>
+                </div>
+              </div>
+              <span class="accent absolute right-4 top-4 text-xs font-semibold"
+                >PROJECT 03</span
+              >
+            </div>
+            <div class="px-1 pb-1 pt-5">
+              <p class="muted text-[11px]">
+                Community · Education · Social impact
+              </p>
+              <h3 class="mt-3 text-xl font-semibold">
+                Learning Corners for Peace
+              </h3>
+              <p class="muted mt-2 text-sm leading-7">
+                A community-centered initiative connecting learning, peace, and
+                opportunities for young people.
+              </p>
+              <div class="mt-5">
+                <a
+                  href="#"
+                  data-placeholder-link
+                  class="focus-ring accent rounded text-sm font-medium hover:underline"
+                  >Project details ↗</a
+                >
+              </div>
+            </div>
+          </article>
+          <article class="panel reveal group rounded-3xl p-5">
+            <div
+              class="soft-bg relative flex min-h-52 items-center justify-center overflow-hidden rounded-2xl border line p-6"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-sky-500/10 to-violet-500/10"
+              ></div>
+              <div
+                class="relative w-full max-w-xs rounded-xl border border-white/10 bg-zinc-950 p-4 text-zinc-100 shadow-2xl transition group-hover:-translate-y-1"
+              >
+                <div class="flex justify-between text-xs font-semibold">
+                  <span>MOVIE NIGHT</span
+                  ><span class="text-amber-300">★ 8.1</span>
+                </div>
+                <div class="mt-4 grid grid-cols-3 gap-2">
+                  <div
+                    class="h-20 rounded-lg bg-gradient-to-b from-violet-300/50 to-violet-900/40"
+                  ></div>
+                  <div
+                    class="h-20 rounded-lg bg-gradient-to-b from-sky-300/50 to-blue-900/40"
+                  ></div>
+                  <div
+                    class="h-20 rounded-lg bg-gradient-to-b from-rose-300/50 to-rose-900/40"
+                  ></div>
+                </div>
+                <div class="mt-3 h-2 w-2/3 rounded bg-white/20"></div>
+                <div class="mt-2 h-2 w-1/2 rounded bg-white/10"></div>
+              </div>
+              <span class="accent absolute right-4 top-4 text-xs font-semibold"
+                >PROJECT 04</span
+              >
+            </div>
+            <div class="px-1 pb-1 pt-5">
+              <p class="muted text-[11px]">
+                Tailwind CSS · Flexbox · Responsive layout
+              </p>
+              <h3 class="mt-3 text-xl font-semibold">Movie Night UI</h3>
+              <p class="muted mt-2 text-sm leading-7">
+                A learning project for practicing navigation, card layouts,
+                spacing, and Flexbox with Tailwind CSS.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-4">
+                <a
+                  href="#"
+                  data-placeholder-link
+                  class="focus-ring accent rounded text-sm font-medium hover:underline"
+                  >Live demo ↗</a
+                ><a
+                  href="#"
+                  data-placeholder-link
+                  class="focus-ring muted rounded text-sm hover:text-current"
+                  >Source code ↗</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="muted mt-5 text-xs leading-6">
+          Only the Her Voice Rising demo link is prefilled. Replace placeholder
+          links with your actual URLs before publishing.
+        </p>
+      </section>
+
+      <section id="journey" class="soft-bg border-y line">
+        <div class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+          <div class="reveal mb-12">
+            <p
+              class="accent mb-3 text-xs font-semibold uppercase tracking-[.22em]"
+            >
+              04 / Journey
+            </p>
+            <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Learning by doing.
+            </h2>
+            <p class="muted mt-4 max-w-2xl leading-7">
+              My path has been shaped by practice, community work, and the
+              willingness to start before I feel fully ready.
+            </p>
+          </div>
+          <div class="grid gap-4 md:grid-cols-2">
+            <article class="panel reveal rounded-2xl p-6">
+              <p class="accent text-xs">2024</p>
+              <h3 class="mt-2 text-lg font-semibold">
+                Front-end practice & internship
+              </h3>
+              <p class="muted mt-2 text-sm leading-7">
+                Worked on front-end projects including landing pages, an admin
+                panel, a café ordering concept, and an English-course website.
+              </p>
+            </article>
+            <article class="panel reveal rounded-2xl p-6">
+              <p class="accent text-xs">2025–2026</p>
+              <h3 class="mt-2 text-lg font-semibold">
+                Learning and community contribution
+              </h3>
+              <p class="muted mt-2 text-sm leading-7">
+                Continued building technical foundations while volunteering in
+                English education and contributing to youth and social-impact
+                initiatives.
+              </p>
+            </article>
+            <article class="panel reveal rounded-2xl p-6">
+              <p class="accent text-xs">NOW</p>
+              <h3 class="mt-2 text-lg font-semibold">
+                React, Tailwind & better fundamentals
+              </h3>
+              <p class="muted mt-2 text-sm leading-7">
+                Practicing components, layout systems, JavaScript, API requests,
+                accessible interfaces, and Git workflows.
+              </p>
+            </article>
+            <article class="panel reveal rounded-2xl p-6">
+              <p class="accent text-xs">NEXT</p>
+              <h3 class="mt-2 text-lg font-semibold">
+                Build useful things with a team
+              </h3>
+              <p class="muted mt-2 text-sm leading-7">
+                Looking to grow through meaningful projects, constructive
+                feedback, and opportunities to contribute while learning.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
+        <div
+          class="panel reveal relative overflow-hidden rounded-[2rem] p-7 sm:p-12 lg:p-16"
+        >
+          <div
+            class="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-violet-500/15 blur-3xl"
+          ></div>
+          <div
+            class="relative grid gap-10 md:grid-cols-[1fr_auto] md:items-end"
+          >
+            <div class="max-w-2xl">
+              <p
+                class="accent mb-3 text-xs font-semibold uppercase tracking-[.22em]"
+              >
+                05 / Contact
+              </p>
+              <h2 class="text-3xl font-semibold tracking-tight sm:text-5xl">
+                Have an idea or an opportunity?
+              </h2>
+              <p class="muted mt-5 max-w-xl leading-8">
+                I'm happy to connect with people who care about learning,
+                technology, education, and thoughtful collaboration.
+              </p>
+              <p class="muted mt-4 text-sm">
+                Replace the placeholder email with your professional email
+                before publishing.
+              </p>
+            </div>
+            <div class="flex flex-col gap-3 sm:flex-row md:flex-col">
+              <a
+                id="emailLink"
+                href="mailto:your.email@example.com"
+                class="focus-ring accent-btn inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition"
+                >Email me ↗</a
+              ><button
+                id="copyEmail"
+                type="button"
+                class="focus-ring panel rounded-xl px-5 py-3 text-sm font-semibold"
+              >
+                Copy email
+              </button>
+            </div>
+          </div>
+          <p
+            id="copyMessage"
+            class="relative mt-4 text-sm accent"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </div>
+      </section>
+    </main>
+    <footer class="border-t line px-5 py-7 sm:px-8">
+      <div
+        class="muted mx-auto flex max-w-6xl flex-col gap-4 text-xs sm:flex-row sm:items-center sm:justify-between"
+      >
+        <p>
+          © <span id="year"></span> Masuma Barati. Made with care and curiosity.
+        </p>
+        <a href="#home" class="focus-ring w-fit rounded hover:text-current"
+          >Back to top ↑</a
+        >
+      </div>
+    </footer>
+    <script src="./JavaScript/app.js"></script>
+  </body>
+</html>
