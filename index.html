@@ -8,7 +8,7 @@
       content="Masuma Barati — aspiring front-end developer building thoughtful, useful web experiences."
     />
     <meta name="theme-color" content="#0b0b10" />
-    <title>Masuma Barati — Front-End Developer</title>
+    <title>Masuma Barati - Front-End Developer</title>
     <!-- Tailwind CSS v4-->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
@@ -137,6 +137,7 @@
         class="absolute right-[-8rem] top-[30rem] h-80 w-80 rounded-full bg-indigo-500/15 blur-[70px]"
       ></div>
     </div>
+    <!-- Header -->
     <header class="fixed inset-x-0 top-0 z-50 px-4 pt-3 sm:px-6">
       <nav
         aria-label="Main navigation"
@@ -256,8 +257,9 @@
         >
       </div>
     </header>
-
+    <!-- Main Content -->
     <main>
+      <!-- Home -->
       <section
         id="home"
         class="mx-auto flex min-h-screen max-w-6xl items-center px-5 pb-20 pt-32 sm:px-8"
@@ -349,11 +351,22 @@
                   </div>
                   <div>
                     <div class="mb-2 flex justify-between text-xs">
+                      <span>Tailwind CSS</span
+                      ><span class="muted">Growing</span>
+                    </div>
+                    <div class="soft-bg h-1.5 overflow-hidden rounded-full">
+                      <div
+                        class="h-full w-[45%] rounded-full bg-violet-300"
+                      ></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="mb-2 flex justify-between text-xs">
                       <span>JavaScript</span><span class="muted">Growing</span>
                     </div>
                     <div class="soft-bg h-1.5 overflow-hidden rounded-full">
                       <div
-                        class="h-full w-[56%] rounded-full bg-violet-300"
+                        class="h-full w-[35%] rounded-full bg-violet-300"
                       ></div>
                     </div>
                   </div>
@@ -364,7 +377,7 @@
                     </div>
                     <div class="soft-bg h-1.5 overflow-hidden rounded-full">
                       <div
-                        class="h-full w-[35%] rounded-full bg-violet-300"
+                        class="h-full w-[20%] rounded-full bg-violet-300"
                       ></div>
                     </div>
                   </div>
@@ -383,7 +396,7 @@
           </div>
         </div>
       </section>
-
+      <!-- About -->
       <section id="about" class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
         <div class="reveal grid gap-10 md:grid-cols-[.7fr_1.3fr] md:gap-20">
           <div>
@@ -425,7 +438,7 @@
           </div>
         </div>
       </section>
-
+      <!-- Skills -->
       <section id="skills" class="soft-bg border-y line">
         <div class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
           <div class="reveal mb-12 max-w-2xl">
@@ -519,7 +532,7 @@
           </div>
         </div>
       </section>
-
+      <!-- Work -->
       <section id="work" class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
         <div
           class="reveal mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"
@@ -534,104 +547,92 @@
               Things I've worked on.
             </h2>
             <p class="muted mt-4 max-w-xl leading-7">
-              A mix of learning projects and purpose-driven work. Replace
-              placeholder links with the demos and repositories you want to
-              share.
+              A mix of learning projects and purpose-driven work.
             </p>
           </div>
           <span class="w-fit rounded-full border line px-3 py-2 text-xs muted"
-            >Selected projects · 2024–2026</span
-          >
+            >Selected projects
+          </span>
         </div>
         <div class="grid gap-5 md:grid-cols-2">
+          <!-- Project 01 -->
           <article class="panel reveal group rounded-3xl p-5">
-            <div
-              class="soft-bg relative flex min-h-52 items-center justify-center overflow-hidden rounded-2xl border line p-6"
+           
+             <div
+              class="soft-bg group/image relative aspect-[16/10] overflow-hidden rounded-2xl border line"
             >
+              <img
+                src="./Images/Her Voices Rising.PNG"
+                alt="Screenshot of the Her voices Rising website"
+                loading="lazy"
+                class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.classList.remove('hidden');
+                "
+              />
               <div
-                class="absolute inset-0 bg-gradient-to-br from-violet-500/15 to-indigo-500/10"
-              ></div>
-              <div
-                class="relative w-full max-w-xs rounded-xl border border-white/10 bg-zinc-950 p-4 text-zinc-100 shadow-2xl transition group-hover:-translate-y-1"
+                class="hidden h-full min-h-52 items-center justify-center bg-gradient-to-br from-sky-500/10 to-violet-500/10 p-6 text-center"
               >
-                <div class="mb-4 flex gap-1.5">
-                  <i class="h-2 w-2 rounded-full bg-rose-400"></i
-                  ><i class="h-2 w-2 rounded-full bg-amber-300"></i
-                  ><i class="h-2 w-2 rounded-full bg-emerald-400"></i>
-                </div>
-                <div class="mb-3 h-2 w-1/3 rounded bg-violet-300/80"></div>
-                <div class="grid grid-cols-3 gap-2">
-                  <div class="h-14 rounded-lg bg-white/10"></div>
-                  <div class="h-14 rounded-lg bg-violet-300/20"></div>
-                  <div class="h-14 rounded-lg bg-white/10"></div>
-                </div>
-                <div class="mt-3 h-2 w-4/5 rounded bg-white/15"></div>
-                <div class="mt-2 h-2 w-3/5 rounded bg-white/10"></div>
+                
               </div>
-              <span class="accent absolute right-4 top-4 text-xs font-semibold"
+              <span
+                class="absolute right-4 top-4 rounded-full border border-white/15 bg-zinc-950/75 px-3 py-1.5 text-xs font-medium text-white backdrop-blur"
                 >PROJECT 01</span
               >
             </div>
             <div class="px-1 pb-1 pt-5">
-              <p class="muted text-[11px]">HTML · CSS · JavaScript</p>
-              <h3 class="mt-3 text-xl font-semibold">Her Voice Rising</h3>
+              <p class="muted text-[11px]">HTML · CSS · JavaScript · Bootstrap · Font Awesome · AOS Animation Library · Formspree</p>
+              <h3 class="mt-3 text-xl font-semibold">Her Voices Rising</h3>
               <p class="muted mt-2 text-sm leading-7">
                 A social-impact project focused on the untold stories of Afghan
                 girls, with attention to privacy and thoughtful presentation.
               </p>
               <div class="mt-5 flex flex-wrap gap-4">
                 <a
-                  href="https://her-voice-rising.netlify.app/"
+                  href="https://hervoicesrising.netlify.app/"
                   target="_blank"
                   rel="noreferrer"
                   class="focus-ring accent rounded text-sm font-medium hover:underline"
-                  >View project ↗</a
+                  >Live demo ↗</a
                 ><a
-                  href="#"
-                  data-placeholder-link
+                  href="https://github.com/MasuMa6410/HerVoiceRisingUntoldStoriesOfAghanGirls"
+                   target="_blank"
                   class="focus-ring muted rounded text-sm hover:text-current"
                   >Source code ↗</a
                 >
               </div>
             </div>
           </article>
+          <!-- Project 02 -->
           <article class="panel reveal group rounded-3xl p-5">
-            <div
-              class="soft-bg relative flex min-h-52 items-center justify-center overflow-hidden rounded-2xl border line p-6"
+             <div
+              class="soft-bg group/image relative aspect-[16/10] overflow-hidden rounded-2xl border line"
             >
+              <img
+                src="./Images/Tech Company Website.PNG"
+                alt="Screenshot of the Tech Company website"
+                loading="lazy"
+                class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.classList.remove('hidden');
+                "
+              />
               <div
-                class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-cyan-500/10"
-              ></div>
-              <div
-                class="relative w-full max-w-xs rounded-xl border line bg-white p-4 text-zinc-800 shadow-2xl transition group-hover:-translate-y-1"
+                class="hidden h-full min-h-52 items-center justify-center bg-gradient-to-br from-sky-500/10 to-violet-500/10 p-6 text-center"
               >
-                <div class="flex justify-between">
-                  <div class="h-3 w-24 rounded bg-zinc-200"></div>
-                  <div class="h-6 w-6 rounded-full bg-emerald-100"></div>
-                </div>
-                <div class="mt-5 grid grid-cols-2 gap-3">
-                  <div class="rounded-lg border border-zinc-100 p-3">
-                    <div class="h-2 w-10 rounded bg-zinc-200"></div>
-                    <div class="mt-3 h-5 w-14 rounded bg-emerald-200"></div>
-                  </div>
-                  <div class="rounded-lg border border-zinc-100 p-3">
-                    <div class="h-2 w-10 rounded bg-zinc-200"></div>
-                    <div class="mt-3 h-5 w-14 rounded bg-cyan-200"></div>
-                  </div>
-                </div>
-                <div class="mt-3 h-14 rounded-lg bg-zinc-100 p-3">
-                  <div class="h-2 w-3/4 rounded bg-zinc-300"></div>
-                  <div class="mt-2 h-2 w-1/2 rounded bg-zinc-200"></div>
-                </div>
+                
               </div>
-              <span class="accent absolute right-4 top-4 text-xs font-semibold"
+              <span
+                class="absolute right-4 top-4 rounded-full border border-white/15 bg-zinc-950/75 px-3 py-1.5 text-xs font-medium text-white backdrop-blur"
                 >PROJECT 02</span
               >
             </div>
             <div class="px-1 pb-1 pt-5">
-              <p class="muted text-[11px]">HTML · CSS · JavaScript</p>
+              <p class="muted text-[11px]">HTML · CSS · JavaScript · Alpine.js · AOS</p>
               <h3 class="mt-3 text-xl font-semibold">
-                Front-end Practice Projects
+                Tech Company Website
               </h3>
               <p class="muted mt-2 text-sm leading-7">
                 Practice projects exploring page layouts, interactive
@@ -639,119 +640,216 @@
               </p>
               <div class="mt-5 flex flex-wrap gap-4">
                 <a
-                  href="#"
-                  data-placeholder-link
+                  href="https://tech-companywebsite.netlify.app/"
+                 target="_blank"
+                  rel="noreferrer"
                   class="focus-ring accent rounded text-sm font-medium hover:underline"
                   >Live demo ↗</a
                 ><a
-                  href="#"
-                  data-placeholder-link
+                  href="https://github.com/MasuMa6410/Tech-Company-Website"
+                  target="_blank"
+                  rel="noreferrer"
                   class="focus-ring muted rounded text-sm hover:text-current"
                   >Source code ↗</a
                 >
               </div>
             </div>
           </article>
+          <!-- Project 03 -->
           <article class="panel reveal group rounded-3xl p-5">
             <div
-              class="soft-bg relative flex min-h-52 items-center justify-center overflow-hidden rounded-2xl border line p-6"
+              class="soft-bg group/image relative aspect-[16/10] overflow-hidden rounded-2xl border line"
             >
+              <img
+                src="./Images/Event Countdown Landing Page.PNG"
+                alt="Screenshot of the Event Countdown Landing Page website"
+                loading="lazy"
+                class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.classList.remove('hidden');
+                "
+              />
               <div
-                class="absolute inset-0 bg-gradient-to-br from-amber-400/10 to-rose-400/10"
-              ></div>
-              <div
-                class="relative w-full max-w-xs rounded-xl border line bg-[#18131f] p-4 text-white shadow-2xl transition group-hover:-translate-y-1"
+                class="hidden h-full min-h-52 items-center justify-center bg-gradient-to-br from-sky-500/10 to-violet-500/10 p-6 text-center"
               >
-                <div
-                  class="text-xs font-semibold tracking-wide text-violet-200"
-                >
-                  LEARNING CORNERS
-                </div>
-                <div class="mt-3 text-xl font-semibold">Learn together.</div>
-                <div class="mt-2 text-[10px] leading-5 text-zinc-400">
-                  Learning · Community · Opportunity
-                </div>
-                <div class="mt-4 flex gap-2">
-                  <div class="h-9 flex-1 rounded-lg bg-violet-300/20"></div>
-                  <div class="h-9 flex-1 rounded-lg bg-amber-300/20"></div>
-                  <div class="h-9 flex-1 rounded-lg bg-cyan-300/20"></div>
-                </div>
+                
               </div>
-              <span class="accent absolute right-4 top-4 text-xs font-semibold"
+              <span
+                class="absolute right-4 top-4 rounded-full border border-white/15 bg-zinc-950/75 px-3 py-1.5 text-xs font-medium text-white backdrop-blur"
                 >PROJECT 03</span
               >
             </div>
             <div class="px-1 pb-1 pt-5">
               <p class="muted text-[11px]">
-                Community · Education · Social impact
+                HTML · CSS · JavaScript · Alpine.js · Bootstrap · Leaflet.js · iTyped.js
               </p>
               <h3 class="mt-3 text-xl font-semibold">
-                Learning Corners for Peace
+                Event Countdown Landing Page
               </h3>
               <p class="muted mt-2 text-sm leading-7">
                 A community-centered initiative connecting learning, peace, and
                 opportunities for young people.
               </p>
-              <div class="mt-5">
+              <div class="mt-5 flex flex-wrap gap-4">
                 <a
-                  href="#"
-                  data-placeholder-link
+                  href="https://event-countdown-landing-page.netlify.app/"
+                 target="_blank"
+                  rel="noreferrer"
                   class="focus-ring accent rounded text-sm font-medium hover:underline"
-                  >Project details ↗</a
+                  >Live demo ↗</a
+                ><a
+                  href="https://github.com/MasuMa6410/Event-Countdown-Landing-Page"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="focus-ring muted rounded text-sm hover:text-current"
+                  >Source code ↗</a
                 >
               </div>
             </div>
           </article>
+          <!-- Project 04 -->
           <article class="panel reveal group rounded-3xl p-5">
-            <div
-              class="soft-bg relative flex min-h-52 items-center justify-center overflow-hidden rounded-2xl border line p-6"
+             <div
+              class="soft-bg group/image relative aspect-[16/10] overflow-hidden rounded-2xl border line"
             >
+              <img
+                src="./Images/Frame Night.PNG"
+                alt="Screenshot of the FrameNight website"
+                loading="lazy"
+                class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.classList.remove('hidden');
+                "
+              />
               <div
-                class="absolute inset-0 bg-gradient-to-br from-sky-500/10 to-violet-500/10"
-              ></div>
-              <div
-                class="relative w-full max-w-xs rounded-xl border border-white/10 bg-zinc-950 p-4 text-zinc-100 shadow-2xl transition group-hover:-translate-y-1"
+                class="hidden h-full min-h-52 items-center justify-center bg-gradient-to-br from-sky-500/10 to-violet-500/10 p-6 text-center"
               >
-                <div class="flex justify-between text-xs font-semibold">
-                  <span>MOVIE NIGHT</span
-                  ><span class="text-amber-300">★ 8.1</span>
-                </div>
-                <div class="mt-4 grid grid-cols-3 gap-2">
-                  <div
-                    class="h-20 rounded-lg bg-gradient-to-b from-violet-300/50 to-violet-900/40"
-                  ></div>
-                  <div
-                    class="h-20 rounded-lg bg-gradient-to-b from-sky-300/50 to-blue-900/40"
-                  ></div>
-                  <div
-                    class="h-20 rounded-lg bg-gradient-to-b from-rose-300/50 to-rose-900/40"
-                  ></div>
-                </div>
-                <div class="mt-3 h-2 w-2/3 rounded bg-white/20"></div>
-                <div class="mt-2 h-2 w-1/2 rounded bg-white/10"></div>
+                
               </div>
-              <span class="accent absolute right-4 top-4 text-xs font-semibold"
+              <span
+                class="absolute right-4 top-4 rounded-full border border-white/15 bg-zinc-950/75 px-3 py-1.5 text-xs font-medium text-white backdrop-blur"
                 >PROJECT 04</span
               >
             </div>
             <div class="px-1 pb-1 pt-5">
               <p class="muted text-[11px]">
-                Tailwind CSS · Flexbox · Responsive layout
+                HTML · Tailwind CSS · Responsive layout · JavaScript 
               </p>
-              <h3 class="mt-3 text-xl font-semibold">Movie Night UI</h3>
+              <h3 class="mt-3 text-xl font-semibold">FrameNight </h3>
               <p class="muted mt-2 text-sm leading-7">
                 A learning project for practicing navigation, card layouts,
                 spacing, and Flexbox with Tailwind CSS.
               </p>
               <div class="mt-5 flex flex-wrap gap-4">
                 <a
-                  href="#"
-                  data-placeholder-link
+                  href="https://framenight.netlify.app/"
+                  
                   class="focus-ring accent rounded text-sm font-medium hover:underline"
                   >Live demo ↗</a
                 ><a
-                  href="#"
-                  data-placeholder-link
+                  href="https://github.com/MasuMa6410/FrameNight"
+                 
+                  class="focus-ring muted rounded text-sm hover:text-current"
+                  >Source code ↗</a
+                >
+              </div>
+            </div>
+          </article>
+          <!-- Project 05 -->
+          <article class="panel reveal group rounded-3xl p-5">
+            <div
+              class="soft-bg group/image relative aspect-[16/10] overflow-hidden rounded-2xl border line"
+            >
+              <img
+                src="./Images/E-Commerce Admin Dashboard.PNG"
+                alt="Screenshot of the E-Commerce Admin Dashboard website"
+                loading="lazy"
+                class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.classList.remove('hidden');
+                "
+              />
+              <div
+                class="hidden h-full min-h-52 items-center justify-center bg-gradient-to-br from-sky-500/10 to-violet-500/10 p-6 text-center"
+              >
+                
+              </div>
+              <span
+                class="absolute right-4 top-4 rounded-full border border-white/15 bg-zinc-950/75 px-3 py-1.5 text-xs font-medium text-white backdrop-blur"
+                >PROJECT 05</span
+              >
+            </div>
+            <div class="px-1 pb-1 pt-5">
+              <p class="muted text-[11px]">HTML · CSS · JavaScript · Alpine.js · Bootstrap · AmCharts · PureCounter</p>
+              <h3 class="mt-3 text-xl font-semibold">E-Commerce Admin Dashboard</h3>
+              <p class="muted mt-2 text-sm leading-7">
+                A social-impact project focused on the untold stories of Afghan
+                girls, with attention to privacy and thoughtful presentation.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-4">
+                <a
+                  href="https://e-commerce-admin-dashboard-project.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="focus-ring accent rounded text-sm font-medium hover:underline"
+                  >Live demo ↗</a
+                ><a
+                  href="https://github.com/MasuMa6410/E-Commerce-Admin-Dashboard"
+                   target="_blank"
+                  class="focus-ring muted rounded text-sm hover:text-current"
+                  >Source code ↗</a
+                >
+              </div>
+            </div>
+          </article>
+           <!-- Project 06 -->
+          <article class="panel reveal group rounded-3xl p-5">
+            <div
+              class="soft-bg group/image relative aspect-[16/10] overflow-hidden rounded-2xl border line"
+            >
+              <img
+                src="./Images/The Ultimate Burger Hauem.PNG"
+                alt="Screenshot of the Ultimate Burger Hauem – Responsive Food website"
+                loading="lazy"
+                class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.classList.remove('hidden');
+                "
+              />
+              <div
+                class="hidden h-full min-h-52 items-center justify-center bg-gradient-to-br from-sky-500/10 to-violet-500/10 p-6 text-center"
+              >
+                
+              </div>
+              <span
+                class="absolute right-4 top-4 rounded-full border border-white/15 bg-zinc-950/75 px-3 py-1.5 text-xs font-medium text-white backdrop-blur"
+                >PROJECT 06</span
+              >
+            </div>
+            <div class="px-1 pb-1 pt-5">
+              <p class="muted text-[11px]">HTML · CSS · JavaScript · Bootstrap</p>
+              <h3 class="mt-3 text-xl font-semibold">
+                Ultimate Burger Hauem – Responsive Food Website
+              </h3>
+              <p class="muted mt-2 text-sm leading-7">
+                Practice projects exploring page layouts, interactive
+                components, responsive styling, and front-end fundamentals.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-4">
+                <a
+                  href="https://ultimate-burger-hauem.netlify.app/"
+                 target="_blank"
+                  rel="noreferrer"
+                  class="focus-ring accent rounded text-sm font-medium hover:underline"
+                  >Live demo ↗</a
+                ><a
+                  href="https://github.com/MasuMa6410/The-Ultimate-Burger-Hauem"
+                  target="_blank"
+                  rel="noreferrer"
                   class="focus-ring muted rounded text-sm hover:text-current"
                   >Source code ↗</a
                 >
@@ -759,12 +857,9 @@
             </div>
           </article>
         </div>
-        <p class="muted mt-5 text-xs leading-6">
-          Only the Her Voice Rising demo link is prefilled. Replace placeholder
-          links with your actual URLs before publishing.
-        </p>
+       
       </section>
-
+      <!-- Journey -->
       <section id="journey" class="soft-bg border-y line">
         <div class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
           <div class="reveal mb-12">
@@ -826,7 +921,7 @@
           </div>
         </div>
       </section>
-
+      <!-- Contact -->
       <section id="contact" class="mx-auto max-w-6xl px-5 py-24 sm:px-8">
         <div
           class="panel reveal relative overflow-hidden rounded-[2rem] p-7 sm:p-12 lg:p-16"
@@ -850,15 +945,12 @@
                 I'm happy to connect with people who care about learning,
                 technology, education, and thoughtful collaboration.
               </p>
-              <p class="muted mt-4 text-sm">
-                Replace the placeholder email with your professional email
-                before publishing.
-              </p>
+              
             </div>
             <div class="flex flex-col gap-3 sm:flex-row md:flex-col">
               <a
                 id="emailLink"
-                href="mailto:your.email@example.com"
+                href="mailto:masumabarati0@gmail.com"
                 class="focus-ring accent-btn inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition"
                 >Email me ↗</a
               ><button
@@ -879,6 +971,7 @@
         </div>
       </section>
     </main>
+    <!-- Footer -->
     <footer class="border-t line px-5 py-7 sm:px-8">
       <div
         class="muted mx-auto flex max-w-6xl flex-col gap-4 text-xs sm:flex-row sm:items-center sm:justify-between"
@@ -891,6 +984,7 @@
         >
       </div>
     </footer>
+    <!-- JavaScript -->
     <script src="./JavaScript/app.js"></script>
   </body>
 </html>
